@@ -1,37 +1,65 @@
-# Frontend Chat with Custom AI Model
+<div style="text-align: justify"> 
 
-Welcome to the hiring task for gstudio.ai! In this task, your objective is to create a frontend application that allows users to chat with a custom AI model. You will be provided with the necessary resources to set up the environment and interact with the AI model.
+# Run Your GPT with React and Django
 
-## Objective
+Welcome to the Run Your GPT project! This repository contains a frontend application built with React that allows users to chat with a custom AI model, and a backend built with Django.
 
-Your task is to create a frontend application using React that enables users to have interactive conversations with a custom AI model. You will use the provided Google Colab notebook for running the AI model and the example Python file for interacting with it.
+## Demo
+(Unlisted Video):-https://www.youtube.com/watch?v=1Zlipw28ll4
+## Prerequisites:
 
-## Provided Resources
+ - Node.js and npm
+ - Python and pip
+ - Django
 
-1. **Google Colab Notebook**: This [notebook](https://colab.research.google.com/drive/1BkL7zYVYtn0JPYKMPJ0tJmK-zMtINx0P?usp=sharing) contains the AI model and establishes a WebSocket connection along with a normal server for interaction.
+## Setting Up and Running the Project:
 
-2. **Example Python File**: Both Files demonstrates how to interact with the AI model programmatically, you can use any one of the two streaming methods to complete the task. But be ready with a reason of why you selected it.
+### Frontend (React):
+Navigate to the project directory:
+` cd project `
+#### Install the required npm packages:
 
-## Tasks
+` npm install `
+#### Run the React development server:
+` npm start `
+\
+\
+This will start the React app, and it should automatically open in your default browser at http://localhost:3000.
 
-1. **Create a React Frontend**: Develop a user-friendly chat interface using React where users can input their messages and receive responses from the AI model.
+### Backend (Django):
+Navigate to the server directory: `cd server`
+\
+create and run a Virtual Environment first using the following commands 
+#### In windows PC
+ ``` 
+  virtualenv env
+  env\scripts\activate
+ ```
+#### In MacOS
+ ``` 
+  virtualenv env
+  source env/bin/activate
+ ```
+#### Install the required Python packages (it's recommended to use a virtual environment):
+```
+ pip install django
+ pip install djangorestframework
+ pip install djangorestframework_simplejwt
+ pip install django-cors-headers
+ python manage.py makemigrations
 
-2. **Integrate AI Model**: Use the provided example Python file to communicate with the AI model. Messages from the frontend should be sent to the AI model, and the responses should be displayed back to the user in the chat interface.
+```
+#### Run the Django development server:
+`python manage.py runserver`
 
-3. **Implement Message Limit and Login System**: Limit the number of messages a user can send to 25. Optionally, you can implement a simple login system to track users' messages.
+This will start the Django server at http://localhost:8000.
+#### Integrating the AI Model:
+The AI model needs to be integrated for the chat functionality. Follow the instructions provided in the Google Colab Notebook (https://colab.research.google.com/drive/1BkL7zYVYtn0JPYKMPJ0tJmK-zMtINx0P?usp=sharing) to set up the AI model and establish a WebSocket connection.
 
-4. **Bonus Points - Incorporate Whisper STT and Silero TTS**: If you want to earn brownie points, consider integrating the Whisper Speech-to-Text (STT) system for voice input and Silero Text-to-Speech (TTS) for generating AI model responses as voice output.
+### Additional Information:
 
-## Submission
-
-Fork this repository and create your solution within it. Once you're done, please provide us with a link to your forked repository for evaluation.
-
-## Evaluation Criteria
-
-- Functionality: Does the frontend allow users to chat with the AI model effectively?
-- Code Quality: Is the code well-structured, clean, and maintainable?
-- Additional Features: Did you successfully implement the message limit, login system, and any bonus tasks?
-- Creativity: Did you go beyond the basic requirements to make the chat interface more engaging and user-friendly?
-- Documentation: Is your `README.md` clear and comprehensive?
-
-Feel free to reach out if you have any questions. Good luck!
+Ensure CORS configurations are set up correctly in Django settings to allow requests from the React frontend.
+<b>The React frontend communicates with the AI model using the provided example Python file</b>. Ensure the WebSocket connection is established correctly for real-time chat functionality.
+<b>The number of messages a user can send is limited to 25</b>. Implemented a Signup and Login Sytem using Django. Dynamic and User Friendly UI as well. 
+This README provides a comprehensive guide to set up and run the project locally. Ensure you have the necessary prerequisites installed and follow the instructions step by step. If you encounter any issues, refer to the original documentation or reach out for support.
+</div>
